@@ -13,6 +13,6 @@ data class Task(
     @ColumnInfo(name = "taskTitle")
     val title: String,
     val description: String,
-    val priority:Int,
+    val priority:String,
     val date: Date,
 )
