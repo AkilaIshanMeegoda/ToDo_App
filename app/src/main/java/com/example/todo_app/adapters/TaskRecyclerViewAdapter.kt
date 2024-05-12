@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo_app.databinding.ViewTaskGridLayoutBinding
 import com.example.todo_app.databinding.ViewTaskLayoutBinding
 import com.example.todo_app.models.Task
 import java.text.SimpleDateFormat

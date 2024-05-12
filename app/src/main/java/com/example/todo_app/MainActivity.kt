@@ -20,6 +20,7 @@ import com.example.todo_app.databinding.ActivityMainBinding
 import com.example.todo_app.models.Task
 import com.example.todo_app.utils.Status
 import com.example.todo_app.utils.StatusResult
+import com.example.todo_app.utils.StatusResult.*
 import com.example.todo_app.utils.clearEditText
 import com.example.todo_app.utils.hideKeyBoard
 import com.example.todo_app.utils.longToastShow
@@ -313,16 +314,16 @@ class MainActivity : AppCompatActivity() {
                     Status.SUCCESS -> {
                         loadingDialog.dismiss()
                         when (it.data as StatusResult) {
-                            StatusResult.Added -> {
+                            Added -> {
                                 Log.d("StatusResult", "Added")
                             }
 
-                            StatusResult.Deleted -> {
+                            Deleted -> {
                                 Log.d("StatusResult", "Deleted")
 
                             }
 
-                            StatusResult.Updated -> {
+                            Updated -> {
                                 Log.d("StatusResult", "Updated")
 
                             }
