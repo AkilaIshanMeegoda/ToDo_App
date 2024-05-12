@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/background"
+
+tools:context=".MainActivity2">
+<GridLayout
+    android:id="@+id/gridLayout2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+
+    android:columnCount="9"
+    android:rowCount="3"
+    android:layout_gravity="center_horizontal">
+    <TextView
+        android:id="@+id/Title1"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:background="@drawable/red"
+        android:gravity="center"
+        android:text="T"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title2"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:background="@drawable/orange"
+        android:gravity="center"
+        android:text="O"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title3"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:background="@drawable/yellow"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title4"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="3"
+        android:background="@drawable/green"
+        android:gravity="center"
+        android:text="O"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title5"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="4"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title6"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="5"
+        android:background="@drawable/pink"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title7"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="6"
+        android:background="@drawable/purple"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Title8"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_row="0"
+        android:layout_column="7"
+        android:background="@drawable/blue"
+        android:gravity="center"
+        android:text="P"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</GridLayout>
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold|italic"
+    android:textColor="@color/black"
+    android:layout_marginTop="100dp"
+    android:layout_marginHorizontal="20dp"
+    android:textSize="18sp"
+    android:textAlignment="center"
+    android:text="Welcome to our To-Do app! Easily jot down tasks, set reminders, and stay on top of your day. Whether it's work deadlines or grocery lists, we've got you covered. Let's start organizing!" />
+
+
+</FrameLayout>
