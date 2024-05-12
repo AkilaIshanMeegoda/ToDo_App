@@ -222,13 +222,8 @@ class MainActivity : AppCompatActivity() {
 
         val taskRVVBListAdapter = TaskRecyclerViewAdapter(isListMutableLiveData ) { type, position, task ->
             if (type == "delete") {
-                taskViewModel
-                    // Deleted Task
-//                .deleteTask(task)
-                    .deleteTaskUsingId(task.id)
+                showDeleteConfirmationDialog(task)
 
-                // Restore Deleted task
-                restoreDeletedTask(task)
             } else if (type == "update") {
                 updateETTitle.setText(task.title)
                 updateETDesc.setText(task.description)
@@ -416,5 +411,22 @@ class MainActivity : AppCompatActivity() {
 
                 }
         }
+    }
+    private fun showDeleteConfirmationDialog(task: Task) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Confirm Deletion")
+            .setMessage("Are you sure you want to delete '${task.title}'?")
+            .setPositiveButton("Delete") { _, _ ->
+                // Call function to delete the task
+                deleteTask(task)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun deleteTask(task: Task) {
+        taskViewModel.deleteTaskUsingId(task.id)
+        // Optionally, you can show a snackbar to allow undoing the delete action
+        restoreDeletedTask(task)
     }
 }
