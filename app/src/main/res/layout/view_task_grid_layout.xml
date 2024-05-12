@@ -45,6 +45,14 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/deadlineTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:text="Deadline"
+            android:textSize="18sp" />
+
+        <TextView
             android:id="@+id/dateTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

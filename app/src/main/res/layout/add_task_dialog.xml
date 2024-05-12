@@ -97,18 +97,17 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.App.TextInputLayout"
-                android:id="@+id/edTaskDeadLineL"
+                android:id="@+id/edTaskDeadlineL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter The Task Priority">
+                android:hint="Enter The Task Deadline">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edTaskDeadLine"
+                    android:id="@+id/edTaskDeadline"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
                     android:background="#EAE4E8"
-                    android:inputType="date"
-                    android:focusable="false" />
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

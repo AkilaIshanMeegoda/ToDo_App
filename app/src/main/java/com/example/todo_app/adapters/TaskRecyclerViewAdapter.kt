@@ -29,6 +29,7 @@ class TaskRecyclerViewAdapter(
             viewTaskListLayoutBinding.titleTxt.text = task.title
             viewTaskListLayoutBinding.descrTxt.text = task.description
             viewTaskListLayoutBinding.priorityTxt.text = task.priority
+            viewTaskListLayoutBinding.deadlineTxt.text = task.deadline
 
             val dateFormat = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss a", Locale.getDefault())
 
@@ -58,6 +59,7 @@ class TaskRecyclerViewAdapter(
             viewTaskGridLayoutBinding.titleTxt.text = task.title
             viewTaskGridLayoutBinding.descrTxt.text = task.description
             viewTaskGridLayoutBinding.priorityTxt.text = task.priority
+            viewTaskGridLayoutBinding.deadlineTxt.text = task.deadline
 
             val dateFormat = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss a", Locale.getDefault())
 
