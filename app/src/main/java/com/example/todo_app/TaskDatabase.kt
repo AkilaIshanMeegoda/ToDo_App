@@ -15,6 +15,7 @@ import com.example.todo_app.models.Task
 @TypeConverters(TypeConverter::class)
 abstract class TaskDatabase : RoomDatabase() {
 
+    abstract val taskDao : TaskOrganizer
 
     companion object {
         @Volatile
