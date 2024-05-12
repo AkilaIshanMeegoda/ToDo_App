@@ -1,14 +1,11 @@
 package com.example.todo_app
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.todo_app.models.Task
 import kotlinx.coroutines.flow.Flow
 
-interface TaskOrganizer {
+@Dao
+interface TaskDao {
 
 
     @Query("""SELECT * FROM Task ORDER BY
