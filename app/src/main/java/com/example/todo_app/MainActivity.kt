@@ -19,8 +19,10 @@ import com.example.todo_app.adapters.TaskRecyclerViewAdapter
 import com.example.todo_app.databinding.ActivityMainBinding
 import com.example.todo_app.models.Task
 import com.example.todo_app.utils.Status
+import com.example.todo_app.utils.StatusResult
 import com.example.todo_app.utils.clearEditText
 import com.example.todo_app.utils.hideKeyBoard
+import com.example.todo_app.utils.longToastShow
 import com.example.todo_app.utils.setupDialog
 import com.example.todo_app.utils.validateEditText
 import com.example.todo_app.viewmodels.TaskViewModel
@@ -30,6 +32,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.util.Date
 import java.util.UUID
@@ -310,16 +313,16 @@ class MainActivity : AppCompatActivity() {
                     Status.SUCCESS -> {
                         loadingDialog.dismiss()
                         when (it.data as StatusResult) {
-                            Added -> {
+                            StatusResult.Added -> {
                                 Log.d("StatusResult", "Added")
                             }
 
-                            Deleted -> {
+                            StatusResult.Deleted -> {
                                 Log.d("StatusResult", "Deleted")
 
                             }
 
-                            Updated -> {
+                            StatusResult.Updated -> {
                                 Log.d("StatusResult", "Updated")
 
                             }
