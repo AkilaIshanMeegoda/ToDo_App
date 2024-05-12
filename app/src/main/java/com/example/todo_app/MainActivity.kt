@@ -147,8 +147,6 @@ class MainActivity : AppCompatActivity() {
 
         val updateTaskBtn = updateTaskDialog.findViewById<Button>(R.id.updateTaskBtn)
 
-        // Update Task End
-
         isListMutableLiveData.observe(this){
             if (it){
                 mainBinding.taskRV.layoutManager = LinearLayoutManager(
