@@ -5,19 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
-    app:cardBackgroundColor="@color/white">
+    android:layout_marginTop="60dp"
+    app:cardBackgroundColor="@color/white"
+    >
 
     <RelativeLayout
+        android:background="@drawable/todotextimg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
+        android:layout_height="600dp">
 
         <TextView
             android:id="@+id/titleTaskTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="Update Task"
-            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -31,7 +39,7 @@
         <View
             android:id="@+id/viewHLine"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
+            android:layout_height="0.001dp"
             android:layout_below="@id/titleTaskTxt"
             android:background="@color/black" />
 
@@ -49,15 +57,14 @@
                 android:id="@+id/edTaskTitleL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextAppearance="@style/MyHintTextAppearance"
-                android:hint="Enter The Task Title">
+                android:hint="Enter The Task Title"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskTitle"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:textSize="18sp"
-                    android:background="#EAE4E8"
+                    android:backgroundTint="#FFE69C"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,16 +74,14 @@
                 android:id="@+id/edTaskDescL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextAppearance="@style/MyHintTextAppearance"
                 android:hint="Enter The Task Description">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EAE4E8"
+                    android:backgroundTint="#FFE69C"
                     android:gravity="top|start"
-                    android:textSize="18sp"
                     android:inputType="textMultiLine"
                     android:lines="5"
                     android:maxLines="5" />
@@ -88,15 +93,13 @@
                 android:id="@+id/edTaskPriorityL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextAppearance="@style/MyHintTextAppearance"
                 android:hint="Enter The Task Priority">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskPriority"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:textSize="18sp"
-                    android:background="#EAE4E8"
+                    android:backgroundTint="#FFE69C"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -106,16 +109,14 @@
                 android:id="@+id/edTaskDeadlineL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextAppearance="@style/MyHintTextAppearance"
                 android:hint="Enter The Task Deadline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edTaskDeadline"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:textSize="18sp"
-                    android:background="#EAE4E8"
-                    android:inputType="text" />
+                    android:backgroundTint="#FFE69C"
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,8 +126,9 @@
                 android:layout_height="?actionBarSize"
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
-                android:backgroundTint="@color/black"
-                style="@style/Widget.App.Button.Fill"
+                android:elevation="10dp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/secondary_color"
                 android:text="Update Task"
                 android:textSize="20sp" />
         </LinearLayout>

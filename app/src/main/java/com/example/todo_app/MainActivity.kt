@@ -212,18 +212,13 @@ class MainActivity : AppCompatActivity() {
                 mainBinding.taskRV.layoutManager = LinearLayoutManager(
                     this, LinearLayoutManager.VERTICAL,false
                 )
-                mainBinding.listOrGridImg.setImageResource(R.drawable.ic_view_module)
             }else{
                 mainBinding.taskRV.layoutManager = StaggeredGridLayoutManager(
                     2, LinearLayoutManager.VERTICAL
                 )
-                mainBinding.listOrGridImg.setImageResource(R.drawable.ic_view_list)
             }
         }
 
-        mainBinding.listOrGridImg.setOnClickListener {
-            isListMutableLiveData.postValue(!isListMutableLiveData.value!!)
-        }
 
         val taskRVVBListAdapter = TaskRecyclerViewAdapter(isListMutableLiveData ) { type, position, task ->
             if (type == "delete") {

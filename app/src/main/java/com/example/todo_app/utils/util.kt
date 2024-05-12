@@ -7,7 +7,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.example.todo_app.R
 import com.google.android.material.textfield.TextInputLayout
+import io.github.muddz.styleabletoast.StyleableToast
 
 enum class Status{
     SUCCESS,
@@ -31,7 +33,7 @@ fun Context.hideKeyBoard(view : View){
 }
 
 fun Context.longToastShow(msg:String){
-    Toast.makeText(this,msg, Toast.LENGTH_LONG).show()
+    StyleableToast.makeText(this, msg, Toast.LENGTH_LONG, R.style.editToast).show();
 }
 
 fun Dialog.setupDialog(layoutResId: Int){
