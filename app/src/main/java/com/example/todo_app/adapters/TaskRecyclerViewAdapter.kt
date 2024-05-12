@@ -89,7 +89,7 @@ class TaskRecyclerViewAdapter(
             )
         }else{  // List_Item
             ListTaskViewHolder(
-                ViewTaskListLayoutBinding.inflate(
+                ViewTaskLayoutBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false

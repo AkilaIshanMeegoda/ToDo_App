@@ -15,10 +15,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.todo_app.adapters.TaskRecyclerViewAdapter
 import com.example.todo_app.databinding.ActivityMainBinding
 import com.example.todo_app.models.Task
+import com.example.todo_app.utils.Status
+import com.example.todo_app.utils.clearEditText
+import com.example.todo_app.utils.hideKeyBoard
 import com.example.todo_app.utils.setupDialog
 import com.example.todo_app.utils.validateEditText
+import com.example.todo_app.viewmodels.TaskViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -165,7 +170,7 @@ class MainActivity : AppCompatActivity() {
             isListMutableLiveData.postValue(!isListMutableLiveData.value!!)
         }
 
-        val taskRVVBListAdapter = TaskRVVBListAdapter(isListMutableLiveData ) { type, position, task ->
+        val taskRVVBListAdapter = TaskRecyclerViewAdapter(isListMutableLiveData ) { type, position, task ->
             if (type == "delete") {
                 taskViewModel
                     // Deleted Task
@@ -330,7 +335,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun callGetTaskList(taskRecyclerViewAdapter: TaskRVVBListAdapter) {
+    private fun callGetTaskList(taskRecyclerViewAdapter: TaskRecyclerViewAdapter) {
 
         CoroutineScope(Dispatchers.Main).launch {
             taskViewModel
