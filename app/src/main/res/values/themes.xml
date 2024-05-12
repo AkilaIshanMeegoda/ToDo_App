@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Todo_App" parent="Base.Theme.Todo_App" />
+    <style name="CardViewStyle" parent="Widget.Material3.CardView.Filled">
+        <item name="shapeAppearanceOverlay">@style/CutShape</item>
+    </style>
+    <style name="CutShape" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>
