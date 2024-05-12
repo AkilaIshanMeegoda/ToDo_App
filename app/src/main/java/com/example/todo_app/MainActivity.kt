@@ -114,17 +114,30 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        val addETDeadline = addTaskDialog.findViewById<TextInputEditText>(R.id.edTaskDeadline)
+        val addETDeadlineL = addTaskDialog.findViewById<TextInputLayout>(R.id.edTaskDeadlineL)
+
+        addETDeadline.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                validateEditText(addETDeadline, addETDeadlineL)
+            }
+
+        })
+
         mainBinding.addTaskFABtn.setOnClickListener {
             clearEditText(addETTitle, addETTitleL)
             clearEditText(addETDesc, addETDescL)
             clearEditText(addETPriority, addETPriorityL)
+            clearEditText(addETDeadline, addETDeadlineL)
             addTaskDialog.show()
         }
 
         val saveTaskBtn = addTaskDialog.findViewById<Button>(R.id.saveTaskBtn)
         saveTaskBtn.setOnClickListener {
-            if (validateEditText(addETTitle, addETTitleL)
-                && validateEditText(addETDesc, addETDescL) && validateEditText(addETPriority, addETPriorityL)
+            if (validateEditText(addETTitle, addETTitleL) && validateEditText(addETDesc, addETDescL)
+                && validateEditText(addETPriority, addETPriorityL) && validateEditText(addETDeadline, addETDeadlineL)
             ) {
 
                 val newTask = Task(
@@ -132,6 +145,7 @@ class MainActivity : AppCompatActivity() {
                     addETTitle.text.toString().trim(),
                     addETDesc.text.toString().trim(),
                     addETPriority.text.toString().trim(),
+                    addETDeadline.text.toString().trim(),
                     Date()
                 )
                 hideKeyBoard(it)
@@ -177,6 +191,17 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val updateETDeadline = updateTaskDialog.findViewById<TextInputEditText>(R.id.edTaskDeadline)
+        val updateETDeadlineL = updateTaskDialog.findViewById<TextInputLayout>(R.id.edTaskDeadlineL)
+
+        updateETDeadline.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                validateEditText(updateETDeadline, updateETDeadlineL)
+            }
+        })
+
         val updateCloseImg = updateTaskDialog.findViewById<ImageView>(R.id.closeImg)
         updateCloseImg.setOnClickListener { updateTaskDialog.dismiss() }
 
@@ -213,16 +238,17 @@ class MainActivity : AppCompatActivity() {
                 updateETTitle.setText(task.title)
                 updateETDesc.setText(task.description)
                 updateETPriority.setText(task.priority)
+                updateETDeadline.setText(task.deadline)
                 updateTaskBtn.setOnClickListener {
-                    if (validateEditText(updateETTitle, updateETTitleL)
-                        && validateEditText(updateETDesc, updateETDescL) && validateEditText(updateETPriority, updateETPriorityL)
+                    if (validateEditText(updateETTitle, updateETTitleL) && validateEditText(updateETDesc, updateETDescL)
+                        && validateEditText(updateETPriority, updateETPriorityL) && validateEditText(updateETDeadline, updateETDeadlineL)
                     ) {
                         val updateTask = Task(
                             task.id,
                             updateETTitle.text.toString().trim(),
                             updateETDesc.text.toString().trim(),
                             updateETPriority.text.toString().trim(),
-//                           here i Date updated
+                            updateETDeadline.text.toString().trim(),
                             Date()
                         )
                         hideKeyBoard(it)
