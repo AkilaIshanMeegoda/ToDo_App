@@ -102,21 +102,36 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        val addETPriority = addTaskDialog.findViewById<TextInputEditText>(R.id.edTaskPriority)
+        val addETPriorityL = addTaskDialog.findViewById<TextInputLayout>(R.id.edTaskPriorityL)
+
+        addETPriority.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                validateEditText(addETPriority, addETPriorityL)
+            }
+
+        })
+
         mainBinding.addTaskFABtn.setOnClickListener {
             clearEditText(addETTitle, addETTitleL)
             clearEditText(addETDesc, addETDescL)
+            clearEditText(addETPriority, addETPriorityL)
             addTaskDialog.show()
         }
+
         val saveTaskBtn = addTaskDialog.findViewById<Button>(R.id.saveTaskBtn)
         saveTaskBtn.setOnClickListener {
             if (validateEditText(addETTitle, addETTitleL)
-                && validateEditText(addETDesc, addETDescL)
+                && validateEditText(addETDesc, addETDescL) && validateEditText(addETPriority, addETPriorityL)
             ) {
 
                 val newTask = Task(
                     UUID.randomUUID().toString(),
                     addETTitle.text.toString().trim(),
                     addETDesc.text.toString().trim(),
+                    addETPriority.text.toString().trim(),
                     Date()
                 )
                 hideKeyBoard(it)
@@ -148,6 +163,17 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(s: Editable) {
                 validateEditText(updateETDesc, updateETDescL)
+            }
+        })
+
+        val updateETPriority = updateTaskDialog.findViewById<TextInputEditText>(R.id.edTaskPriority)
+        val updateETPriorityL = updateTaskDialog.findViewById<TextInputLayout>(R.id.edTaskPriorityL)
+
+        updateETPriority.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                validateEditText(updateETPriority, updateETPriorityL)
             }
         })
 
@@ -186,14 +212,16 @@ class MainActivity : AppCompatActivity() {
             } else if (type == "update") {
                 updateETTitle.setText(task.title)
                 updateETDesc.setText(task.description)
+                updateETPriority.setText(task.priority)
                 updateTaskBtn.setOnClickListener {
                     if (validateEditText(updateETTitle, updateETTitleL)
-                        && validateEditText(updateETDesc, updateETDescL)
+                        && validateEditText(updateETDesc, updateETDescL) && validateEditText(updateETPriority, updateETPriorityL)
                     ) {
                         val updateTask = Task(
                             task.id,
                             updateETTitle.text.toString().trim(),
                             updateETDesc.text.toString().trim(),
+                            updateETPriority.text.toString().trim(),
 //                           here i Date updated
                             Date()
                         )

@@ -42,12 +42,21 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/priorityTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="Priority"
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/dateTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 android:text="Date"
                 android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout

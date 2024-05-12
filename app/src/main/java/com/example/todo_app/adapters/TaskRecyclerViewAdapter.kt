@@ -19,7 +19,6 @@ class TaskRecyclerViewAdapter(
     ListAdapter<Task, RecyclerView.ViewHolder>(DiffCallback()) {
 
 
-
     class ListTaskViewHolder(private val viewTaskListLayoutBinding: ViewTaskLayoutBinding) :
         RecyclerView.ViewHolder(viewTaskListLayoutBinding.root) {
 
@@ -29,6 +28,7 @@ class TaskRecyclerViewAdapter(
         ) {
             viewTaskListLayoutBinding.titleTxt.text = task.title
             viewTaskListLayoutBinding.descrTxt.text = task.description
+            viewTaskListLayoutBinding.priorityTxt.text = task.priority
 
             val dateFormat = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss a", Locale.getDefault())
 
@@ -57,6 +57,7 @@ class TaskRecyclerViewAdapter(
         ) {
             viewTaskGridLayoutBinding.titleTxt.text = task.title
             viewTaskGridLayoutBinding.descrTxt.text = task.description
+            viewTaskGridLayoutBinding.priorityTxt.text = task.priority
 
             val dateFormat = SimpleDateFormat("dd-MMM-yyyy HH:mm:ss a", Locale.getDefault())
 

@@ -111,11 +111,16 @@ class TaskRepository(application: Application) {
         }
     }
 
-    fun updateTaskPaticularField(taskId: String, title: String, description: String) {
+    fun updateTaskPaticularField(
+        taskId: String,
+        title: String,
+        description: String,
+        priority: String
+    ) {
         try {
             _statusLiveData.postValue(Loading())
             CoroutineScope(Dispatchers.IO).launch {
-                val result = taskDao.updateTaskPaticularField(taskId, title, description)
+                val result = taskDao.updateTaskPaticularField(taskId, title, description,priority)
                 handleResult(result, "Updated Task Successfully", StatusResult.Updated)
 
             }
